@@ -14,6 +14,7 @@ import Terms from "./pages/terms/terms";
 import Help from "./pages/help/help";
 import Bill from "./pages/payment/bill";
 import OtherUser from "./pages/payment/other_user";
+import News from "./pages/trading/news";
 
 
 const container = document.getElementById("root");
@@ -37,6 +38,7 @@ root.render(
           <Route path="/help" element={<Help />} />
           <Route path="/payment/bill" element={<Bill />} />
           <Route path="/payment/other_user" element={<OtherUser />} />
+          <Route path="/trading/news" element={<News />} />
         </Routes>
       </BrowserRouter>
     </Flowbite>
