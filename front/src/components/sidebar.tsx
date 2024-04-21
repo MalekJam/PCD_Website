@@ -1,17 +1,14 @@
-import { Sidebar, TextInput } from "flowbite-react";
+import {DarkThemeToggle, Sidebar} from "flowbite-react";
 import type { FC } from "react";
 import { useEffect, useState } from "react";
 import {
   HiChartPie,
   HiClipboard,
-  HiCollection,
   HiInformationCircle,
-  HiLogin,
-  HiPencil,
-  HiSearch,
-  HiShoppingBag,
-  HiUsers,
+
 } from "react-icons/hi";
+import { FaMoneyBillTransfer } from "react-icons/fa6";
+import { RiStockFill } from "react-icons/ri";
 
 const ExampleSidebar: FC = function () {
   const [currentPage, setCurrentPage] = useState("");
@@ -23,82 +20,99 @@ const ExampleSidebar: FC = function () {
   }, [setCurrentPage]);
 
   return (
-    <Sidebar aria-label="Sidebar with multi-level dropdown example">
-      <div className="flex h-full flex-col justify-between py-2">
-        <div>
-          <form className="pb-3 md:hidden">
-            <TextInput
-              icon={HiSearch}
-              type="search"
-              placeholder="Search"
-              required
-              size={32}
-            />
-          </form>
-          <Sidebar.Items>
-            <Sidebar.ItemGroup>
-              <Sidebar.Item
-                href="/"
-                icon={HiChartPie}
-                className={
-                  "/" === currentPage ? "bg-gray-100 dark:bg-gray-700" : ""
-                }
-              >
-                Dashboard
-              </Sidebar.Item>
-              <Sidebar.Item
-                href="/e-commerce/products"
-                icon={HiShoppingBag}
-                className={
-                  "/e-commerce/products" === currentPage
-                    ? "bg-gray-100 dark:bg-gray-700"
-                    : ""
-                }
-              >
-                Products
-              </Sidebar.Item>
-              <Sidebar.Item
-                href="/users/list"
-                icon={HiUsers}
-                className={
-                  "/users/list" === currentPage
-                    ? "bg-gray-100 dark:bg-gray-700"
-                    : ""
-                }
-              >
-                Users list
-              </Sidebar.Item>
-              <Sidebar.Item href="/authentication/sign-in" icon={HiLogin}>
-                Sign in
-              </Sidebar.Item>
-              <Sidebar.Item href="/authentication/sign-up" icon={HiPencil}>
-                Sign up
-              </Sidebar.Item>
-            </Sidebar.ItemGroup>
-            <Sidebar.ItemGroup>
-              <Sidebar.Item
-                href="https://github.com/themesberg/flowbite-react/"
-                icon={HiClipboard}
-              >
-                Docs
-              </Sidebar.Item>
-              <Sidebar.Item
-                href="https://flowbite-react.com/"
-                icon={HiCollection}
-              >
-                Components
-              </Sidebar.Item>
-              <Sidebar.Item
-                href="https://github.com/themesberg/flowbite-react/issues"
-                icon={HiInformationCircle}
-              >
-                Help
-              </Sidebar.Item>
-            </Sidebar.ItemGroup>
-          </Sidebar.Items>
+
+      <Sidebar aria-label="Sidebar with multi-level dropdown example" collapseBehavior="hide">
+        <div >
+          <Sidebar.Logo href="#" img="/images/logo.png" imgAlt="LOGO">
+            Flowbite
+          </Sidebar.Logo>
         </div>
-      </div>
-    </Sidebar>
+
+        <div className="flex h-full flex-col justify-between py-2">
+          <div>
+
+            <Sidebar.Items>
+              <Sidebar.ItemGroup>
+
+                <Sidebar.Collapse icon={HiChartPie} label="Budget">
+                  <Sidebar.Item href="/"
+
+                                className={
+                                  "/" === currentPage ? "bg-gray-100 dark:bg-gray-700 " : ""
+                                }>Dashboard</Sidebar.Item>
+                  <Sidebar.Item href="/budget/input"
+
+                                className={
+                                  "/budget/input" === currentPage ? "bg-gray-100 dark:bg-gray-700 " : ""
+                                }>Input</Sidebar.Item>
+                  <Sidebar.Item href="/budget/ai"
+
+                                className={
+                                  "/budget/ai" === currentPage ? "bg-gray-100 dark:bg-gray-700 " : ""
+                                }>AI Assist</Sidebar.Item>
+
+                </Sidebar.Collapse>
+                <Sidebar.Collapse icon={FaMoneyBillTransfer} label="Payments">
+
+                  <Sidebar.Item href="/payment/bill"
+
+                                className={
+                                    "/payment/bill" === currentPage ? "bg-gray-100 dark:bg-gray-700 " : ""
+                                }>Bills</Sidebar.Item>
+                  <Sidebar.Item href="/payment/other_user"
+
+                                className={
+                                  "/payment/other_user" === currentPage ? "bg-gray-100 dark:bg-gray-700 " : ""
+                                }>InterUsers</Sidebar.Item>
+
+                </Sidebar.Collapse>
+
+                  <Sidebar.Collapse icon={RiStockFill } label="Trading">
+                      <Sidebar.Item href="/trading/news"
+
+                                    className={
+                                        "/trading/news" === currentPage ? "bg-gray-100 dark:bg-gray-700 " : ""
+                                    }>News</Sidebar.Item>
+                      <Sidebar.Item href="/trading/ai"
+
+                                    className={
+                                        "/trading/ai" === currentPage ? "bg-gray-100 dark:bg-gray-700 " : ""
+                                    }>Trading Bot</Sidebar.Item>
+                      <Sidebar.Item href="/trading/portfolio"
+
+                                    className={
+                                        "/trading/portfolio" === currentPage ? "bg-gray-100 dark:bg-gray-700 " : ""
+                                    }>Portfolio</Sidebar.Item>
+
+                  </Sidebar.Collapse>
+
+              </Sidebar.ItemGroup>
+              <Sidebar.ItemGroup>
+
+                <Sidebar.Item
+                    href="/terms/terms"
+                    icon={HiClipboard}
+                >
+                  Terms & Conditions
+                </Sidebar.Item>
+
+                <Sidebar.Item
+                    href="/help/help"
+                    icon={HiInformationCircle}
+                >
+                  Help
+                </Sidebar.Item>
+              </Sidebar.ItemGroup>
+            </Sidebar.Items>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-3">
+
+          <DarkThemeToggle/>
+          Toggle Theme
+        </div>
+      </Sidebar>
   );
 };
 

@@ -143,6 +143,8 @@ const SalesChart: FC = function () {
         "05 Feb",
         "06 Feb",
         "07 Feb",
+          "08 Feb",
+          "09 Feb",
       ],
       labels: {
         style: {
@@ -206,7 +208,7 @@ const SalesChart: FC = function () {
   const series = [
     {
       name: "Revenue",
-      data: [6356, 6218, 6156, 6526, 6356, 6256, 6056],
+      data: [6356, 6218, 6156, 6526, 6356, 6256, 6056,200,10000],
       color: "#1A56DB",
     },
   ];

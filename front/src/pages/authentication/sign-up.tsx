@@ -8,7 +8,7 @@ const SignUpPage: FC = function () {
       <div className="my-6 flex items-center gap-x-1 lg:my-0">
         <img
           alt="Flowbite logo"
-          src="https://flowbite.com/docs/images/logo.svg"
+          src="/images/logo.png"
           className="mr-3 h-12"
         />
         <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
