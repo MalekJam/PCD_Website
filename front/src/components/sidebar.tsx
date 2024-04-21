@@ -116,11 +116,11 @@ const ExampleSidebar: FC = function () {
               </Sidebar.Collapse>
             </Sidebar.ItemGroup>
             <Sidebar.ItemGroup>
-              <Sidebar.Item href="/terms/terms" icon={HiClipboard}>
+              <Sidebar.Item href="/terms-and-conditions" icon={HiClipboard}>
                 Terms & Conditions
               </Sidebar.Item>
 
-              <Sidebar.Item href="/help/help" icon={HiInformationCircle}>
+              <Sidebar.Item href="/help" icon={HiInformationCircle}>
                 Help
               </Sidebar.Item>
             </Sidebar.ItemGroup>
