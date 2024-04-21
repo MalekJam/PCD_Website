@@ -12,13 +12,11 @@ const SignUpPage: FC = function () {
           className="mr-3 h-12"
         />
         <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-          Flowbite
+          FinTechSavvy
         </span>
       </div>
       <Card
         horizontal
-        imgSrc="/images/authentication/create-account.jpg"
-        imgAlt=""
         className="w-full md:max-w-screen-sm [&>img]:hidden md:[&>img]:w-96 md:[&>img]:p-0 md:[&>*]:w-full md:[&>*]:p-16 lg:[&>img]:block"
       >
         <h1 className="mb-3 text-2xl font-bold dark:text-white md:text-3xl">
@@ -62,13 +60,13 @@ const SignUpPage: FC = function () {
             </Label>
           </div>
           <div className="mb-7">
-            <Button type="submit" className="w-full lg:w-auto">
+            <Button type="submit" className="w-full lg:w-auto" href="/authentication/card">
               Create account
             </Button>
           </div>
           <p className="text-sm text-gray-500 dark:text-gray-300">
             Already have an account?&nbsp;
-            <a href="#" className="text-primary-600 dark:text-primary-200">
+            <a href="/authentication/sign-in" className="text-primary-600 dark:text-primary-200">
               Login here
             </a>
           </p>

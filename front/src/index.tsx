@@ -9,7 +9,7 @@ import { BrowserRouter } from "react-router-dom";
 import DashboardPage from "./pages";
 import SignInPage from "./pages/authentication/sign-in";
 import SignUpPage from "./pages/authentication/sign-up";
-
+import CardInfo from "./pages/authentication/card";
 
 const container = document.getElementById("root");
 
@@ -27,8 +27,7 @@ root.render(
           <Route path="/" element={<DashboardPage />} index />
           <Route path="/authentication/sign-in" element={<SignInPage />} />
           <Route path="/authentication/sign-up" element={<SignUpPage />} />
-
-
+          <Route path="/authentication/card" element={<CardInfo />} />
         </Routes>
       </BrowserRouter>
     </Flowbite>
